@@ -18,6 +18,12 @@ find_package(xacro REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 
+
+
+# Dipendenze per Aruco
+
+
+
 add_executable(dynamic_tf_publisher src/odom_bl_tf.cpp)
 ament_target_dependencies(dynamic_tf_publisher rclcpp nav_msgs geometry_msgs tf2 tf2_ros)
 
@@ -32,6 +38,7 @@ install(TARGETS dynamic_tf_publisher
 install(PROGRAMS
   scripts/reach_goal.py
   scripts/follow_waypoints.py
+  scripts/aruco_finder.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

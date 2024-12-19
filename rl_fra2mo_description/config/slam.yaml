@@ -41,7 +41,7 @@ slam:
     minimum_travel_distance: 0.01
     minimum_travel_heading: 0.01
     scan_buffer_size: 10
-    scan_buffer_maximum_scan_distance: 7.0  #qua stava 7!!!
+    scan_buffer_maximum_scan_distance: 7.0
     link_match_minimum_response_fine: 0.1
     link_scan_maximum_distance: 1.0
     loop_search_maximum_distance: 3.0

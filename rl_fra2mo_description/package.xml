@@ -22,6 +22,7 @@
   <build_depend>tf2_ros</build_depend>
   <build_depend>urdf</build_depend>
   <build_depend>xacro</build_depend>
+  <build_depend>rclpy</build_depend>
 
   <!-- Dipendenze di build export -->
   <build_export_depend>geometry_msgs</build_export_depend>
@@ -44,6 +45,8 @@
   <exec_depend>urdf</exec_depend>
   <exec_depend>xacro</exec_depend>
   <exec_depend>robot_localization</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  
 
   <export>
     <build_type>ament_cmake</build_type>

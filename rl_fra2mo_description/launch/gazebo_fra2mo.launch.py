@@ -80,6 +80,8 @@ def generate_launch_description():
         output='screen',
         arguments=[
             '/camera@sensor_msgs/msg/Image@gz.msgs.Image',
+            '/aruco_single/result@sensor_msgs/msg/Image@gz.msgs.Image',
+            '/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo',
             '--ros-args', 
             '-r', '/camera:=/camera',
         ],

@@ -51,7 +51,9 @@ To make the robot look for and detect the aruco marker, use the following comman
 and:
 
 	ros2 run rl_fra2mo_description aruco_finder.py
+ The aruco pose estimation in world frame can bee read from the /tf_static topic using:
 
+  	ros2 topic echo /tf_static 
 --------------------------------
 
 To launch RVIZ2 with the desired configuration use the following commands:

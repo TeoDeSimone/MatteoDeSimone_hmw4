@@ -53,7 +53,7 @@ class ArucoFinder(Node):
     aruco_position_mf_ = np.zeros(3)
     aruco_orientation_quaternion_mf_ = np.zeros(4)
     aruco_orientation_rpy_mf_ = np.zeros(3)
-    waypoint_order_ = [9, 10]
+    waypoint_order_ = [14, 0]
     counter_ = 0
     aruco_correctly_computed_ = False
     goal_poses_ = np.zeros(2)

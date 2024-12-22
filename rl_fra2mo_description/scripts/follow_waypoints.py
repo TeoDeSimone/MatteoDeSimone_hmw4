@@ -123,14 +123,13 @@ def main():
     # Definisce l'ordine specifico dei waypoint
 
     if path_selector == 'map_explore':
-        waypoint_order = [5, 7, 12, 6, 11, 13, 8, 4]
+        waypoint_order = [5, 6, 7, 8, 9, 10, 11, 12, 13]
 
     else:    
-        waypoint_order = [2, 3, 1, 0]  # Obiettivo 3 → Obiettivo 4 → Obiettivo 2 → Obiettivo 1
+        waypoint_order = [3, 4, 2, 1]  # Obiettivo 3 → Obiettivo 4 → Obiettivo 2 → Obiettivo 1
     
 
     goal_poses = [create_pose(waypoints[i]) for i in waypoint_order]
-    print("le goal poses sono:",goal_poses)
 
     # Wait for navigation to fully activate, since autostarting nav2
     navigator.waitUntilNav2Active(localizer="smoother_server")
@@ -153,8 +152,6 @@ def main():
             feedback = navigator.getFeedback()
 
             if feedback:
-                print('Executing current waypoint: ' +
-                      str(waypoint_order[i]))
                 now = navigator.get_clock().now()
 
                 # Some navigation timeout to demo cancellation

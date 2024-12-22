@@ -47,3 +47,20 @@ To make the robot follow and detect the aruco marker in the leonardo_race_field 
 
 	ros2 launch rl_fra2mo_description fra2mo_aruco.launch.py
 	ros2 run rl_fra2mo_description aruco_finder.py
+
+--------------------------------
+
+To launch RVIZ2 with the desired configuration use the following commands:
+
+-To use slam_view.rviz configuration file:
+
+	ros2 launch rl_fra2mo_description display_fra2mo.launch.py use_slam_view:=true
+
+-To use explore.rviz configuration file:
+
+	ros2 launch rl_fra2mo_description display_fra2mo.launch.py use_explore:=true
+
+-else to run empty RVIZ2 run:
+
+	ros2 launch rl_fra2mo_description display_fra2mo.launch.py
+

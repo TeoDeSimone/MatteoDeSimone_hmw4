@@ -161,9 +161,7 @@ class ArucoFinder(Node):
          # Computation of the transformation matrix (robot in odometry frame)
         robot_transformation_matrix_of = ArucoFinder.pose_to_matrix(ArucoFinder.robot_pose_odom_.pose.pose)
         
-        # Computation of the transformation matrix (aruco in base_footprint)
-        #aruco_transformation_matrix_basefootprint = ArucoFinder.pose_to_matrix(ArucoFinder.aruco_pose_basefootprint_.pose)
-
+        # Computation of the trasnformation matrix (aruco in odometry frame)
         ArucoFinder.aruco_transformation_matrix_of_ = tft.concatenate_matrices(robot_transformation_matrix_of,ArucoFinder.aruco_transformation_matrix_basefootprint_)
 
     #END odom_listener_callback
@@ -203,28 +201,6 @@ class ArucoFinder(Node):
 
         ArucoFinder.aruco_transformation_matrix_basefootprint_=tft.concatenate_matrices(camera_transformation_matrix_basefootprint,
                                                                                         Aruco_transformation_matrix_cf)
-        
-        # Conver matrix to poseStamped:
-        #aruco_temp_position = tft.translation_from_matrix(Aruco_transformation_matrix_cf)
-
-        #(ArucoFinder.aruco_pose_cf_.pose.position.x, 
-        # ArucoFinder.aruco_pose_cf_.pose.position.y, 
-        # ArucoFinder.aruco_pose_cf_.pose.position.z) = aruco_temp_position
-
-        #aruco_temp_orientation = tft.quaternion_from_matrix(Aruco_transformation_matrix_cf)
-
-        #(ArucoFinder.aruco_pose_cf_.pose.orientation.x, 
-        # ArucoFinder.aruco_pose_cf_.pose.orientation.y, 
-        # ArucoFinder.aruco_pose_cf_.pose.orientation.z,
-        # ArucoFinder.aruco_pose_cf_.pose.orientation.w) = aruco_temp_orientation
-
-        #Passaggio da camera_frame a base_footprint_frame
-
-        #ArucoFinder.aruco_pose_basefootprint_.pose.position.x = ArucoFinder.aruco_pose_cf_.pose.position.x
-        #ArucoFinder.aruco_pose_basefootprint_.pose.position.y = ArucoFinder.aruco_pose_cf_.pose.position.y 
-        #ArucoFinder.aruco_pose_basefootprint_.pose.position.z = ArucoFinder.aruco_pose_cf_.pose.position.z + 0.237 + 0.1 #0.237 is camera height, 0.1 robot height in reference to the floor
-
-        #ArucoFinder.aruco_pose_basefootprint_.pose.orientation = ArucoFinder.aruco_pose_cf_.pose.orientation
 
         ArucoFinder.aruco_detected_ = True
     #END listener_callback          
